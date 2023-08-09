@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lista de Tarefas</h1>
+      <input type="text" id="tarefaInput" placeholder="Digite uma tarefa" />
+      <button id="adicionarBtn">Adicionar</button>
+      <ul id="listaTarefas">
+        <li>
+        
+          <div class="botao-container">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+       
+     const campoInput = document.getElementById("tarefaInput");
+     const botaoAdicionar = document.getElementById("adicionarBtn");
+     const listaTarefas = document.getElementById("listaTarefas");
+
+     botaoAdicionar.addEventListener("click", function() {
+  const novaTarefa = document.createElement("li");
+  novaTarefa.textContent = campoInput.value;
+
+  const botaoContainer = document.createElement("div");
+  botaoContainer.className = "botao-container";
+
+  const editarBtn = document.createElement("button");
+  editarBtn.textContent = "Editar";
+
+  const excluirBtn = document.createElement("button");
+  excluirBtn.textContent = "Excluir";
+
+  botaoContainer.appendChild(editarBtn);
+  botaoContainer.appendChild(excluirBtn);
+
+  novaTarefa.appendChild(botaoContainer);
+
+  campoInput.value = "";
+
+  editarBtn.style.padding = "3px 8px";
+  editarBtn.style.marginLeft = "5px";
+
+  excluirBtn.style.padding = "3px 8px";
+  excluirBtn.style.marginLeft = "5px";
+
+  // Adicionar evento de clique ao botão "Excluir"
+  excluirBtn.addEventListener("click", function() {
+    // Remover o item da lista de tarefas ao qual o botão "Excluir" pertence
+    listaTarefas.removeChild(novaTarefa);
+  });
+
+  // Adicionar evento de clique ao botão "Editar"
+  editarBtn.addEventListener("click", function() {
+    const novoTexto = prompt("Digite o novo texto da tarefa:");
+    if (novoTexto !== null) {
+      novaTarefa.textContent = novoTexto;
+    }
+  });
+
+  listaTarefas.appendChild(novaTarefa);
+});
+
+    </script>
+  </body>
+</html>

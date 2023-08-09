@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="style.css">
+<head>
+  <style>
+    #resultado {
+      color: rgb(0, 140, 255);
+      font-size: 20px;
+      font-weight: bold;
+    
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://img.freepik.com/vetores-premium/calculadora-preta-com-fundo-branco-design-moderno-calculadora-eletronica-portatil_100456-5842.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  
+  .calculator {
+    width: 300px;
+    margin: 50px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  h3 {
+    margin-top: 20px;
+  }
+  
+  #saida {
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <h2>Calculadora de Dobro</h2>
+  <label for="numero">Digite um número:</label>
+  <input type="number" id="numero">
+  <button onclick="calcularDobro()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularDobro() {
+      // Passo 1: Entrada de dados
+      var inputNumero = document.getElementById("numero");
+      var numero = parseFloat(inputNumero.value);
+
+      // Passo 2: Processamento
+      var soma = numero + 2;
+
+      // Passo 3: Saída
+      var resultado = document.getElementById("resultado");
+      resultado.textContent = "A soma dos números é: " + soma;
+    }
+  </script>
+</body>
+</html>

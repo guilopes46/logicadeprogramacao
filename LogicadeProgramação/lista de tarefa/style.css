@@ -1,0 +1,52 @@
+/* Estilo para a div */
+.container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para o título */
+  .container h1 {
+    color: blue;
+  }
+  
+  /* Estilo para o campo de entrada de texto */
+  .container input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para o botão de adicionar */
+  .container button {
+    padding: 5px 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para a lista de tarefas */
+  .container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Estilo para cada item da lista de tarefas */
+  .container li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo para o container dos botões */
+  .container .botao-container {
+    margin-left: auto;
+  }
+  
+  /* Estilo para os botões de editar e excluir */
+  .container .botao-container button {
+    padding: 3px 8px;
+    margin-left: 5px;
+  }

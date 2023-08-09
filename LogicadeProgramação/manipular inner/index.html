@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manipulando innerHTML</title>
+    </head>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: white;
+        }
+        button {
+            top: 20px;
+            left: 250px;
+            height: 90px;
+            width: 90px;
+            border-radius: 80px;
+            border: none;
+            color: aqua;
+            background-color: rgb(11, 11, 11);
+
+        }
+    </style>
+<body>
+    <center><div id="conteudo"></div>
+        <button onclick="MostrarMensagem()">Mostrar Mensaagem</button>
+        <script>
+            function MostrarMensagem(){
+                var conteudoDiv = document.getElementById("conteudo");
+                conteudoDiv.innerHTML = "Plano executado";
+            }
+        </script>
+    </center></body>
+</html>

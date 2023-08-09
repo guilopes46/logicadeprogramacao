@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário de Inscrição</title>
+  <style>
+    .form-container {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-error {
+      color: red;
+      margin-top: 5px;
+    }
+
+    .form-submit {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body  background="https://static.vecteezy.com/ti/vetor-gratis/p3/17216158-fundo-colorido-da-arte-da-parede-dos-grafittis-arte-de-rua-hip-hop-urbano-ilustracaoial-fundo-fundo-de-arte-graffiti-incrivel-sem-costura-vetor.jpgs"> 
+
+
+  <div class="form-container">
+    <h1>Formulário de Inscrição</h1>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="name" class="form-label">Nome:</label>
+        <input type="text" id="name" name="name" class="form-input">
+        <span id="nameError" class="form-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="text" id="email" name="email" class="form-input">
+        <span id="emailError" class="form-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="age" class="form-label">Idade:</label>
+        <input type="number" id="age" name="age" class="form-input">
+        <span id="ageError" class="form-error"></span>
+      </div>
+      <input type="submit" value="Enviar" class="form-submit">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var ageInput = document.getElementById('age');
+
+      clearErrors();
+
+      if (nameInput.value.trim() === '') {
+        displayError('nameError', 'Por favor, informe o nome.');
+      }
+
+      if (!isValidEmail(emailInput.value.trim())) {
+        displayError('emailError', 'Por favor, informe um e-mail válido.');
+      }
+
+      if (!isValidAge(ageInput.value.trim())) {
+        displayError('ageError', 'Por favor, informe uma idade válida.');
+      }
+
+      var errors = document.querySelectorAll('.form-error');
+      if (errors.length === 0) {
+        document.getElementById('registrationForm').submit();
+      }
+    });
+
+    function displayError(id, message) {
+      var errorElement = document.getElementById(id);
+      errorElement.textContent = message;
+    }
+
+    function clearErrors() {
+      var errorElements = document.querySelectorAll('.form-error');
+      for (var i = 0; i < errorElements.length; i++) {
+        errorElements[i].textContent = '';
+      }
+    }
+
+    function isValidEmail(email) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email) }

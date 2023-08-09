@@ -1,0 +1,59 @@
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: green;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+ #taskcontainer {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #taskInput {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  #addbutton {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #tasklist {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Estilizando a lista de tarefas */
+  #tasklist li {
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  #tasklist li.completed {
+    background-color: #c0f7da;
+    text-decoration: line-through;
+  }
+  
+  #tasklist li:hover {
+    background-color: #e6e6e6;
+  }
+  
+  #tasklist li button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    float: right;
+    padding: 5px 8px;
+    margin-left: 5px;
+    border-radius: 3px;
+  }
